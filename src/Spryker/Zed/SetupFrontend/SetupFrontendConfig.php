@@ -41,11 +41,13 @@ class SetupFrontendConfig extends AbstractBundleConfig
     }
 
     /**
-     * @return string
+     * @return array
      */
     public function getYvesInstallerDirectoryPattern()
     {
-        return $this->get(KernelConstants::SPRYKER_ROOT) . '/*/assets/Yves';
+        return [
+            APPLICATION_ROOT_DIR . 'vendor/spryker/*/assets/Yves'
+        ];
     }
 
     /**
@@ -75,11 +77,14 @@ class SetupFrontendConfig extends AbstractBundleConfig
     }
 
     /**
-     * @return string
+     * @return array
      */
     public function getZedInstallerDirectoryPattern()
     {
-        return $this->get(KernelConstants::SPRYKER_ROOT) . '/*/assets/Zed';
+        return [
+            APPLICATION_ROOT_DIR . '/vendor/spryker/*/assets/Zed',
+            APPLICATION_ROOT_DIR . '/src/Pyz/Zed/*/assets/Zed'
+        ];
     }
 
     /**
